@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Inside Out Effect</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 300px;
+            height: 500px;
+        }
+
+        .pop-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            animation: popInOut 3s infinite;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes popInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .emoji-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .emoji {
+            font-size: 24px;
+            position: absolute;
+            animation: floatEmojis 5s linear infinite;
+        }
+
+        @keyframes floatEmojis {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="image.jpeg" alt="Pop Inside Out Image" class="pop-image">
+    <div class="emoji-container">
+        <!-- Adding multiple emojis -->
+        <div class="emoji" style="left: 10%; animation-delay: 0s;">😂</div>
+        <div class="emoji" style="left: 30%; animation-delay: 1s;">😂</div>
+        <div class="emoji" style="left: 50%; animation-delay: 2s;">😂</div>
+        <div class="emoji" style="left: 70%; animation-delay: 3s;">😂</div>
+        <div class="emoji" style="left: 90%; animation-delay: 4s;">😂</div>
+    </div>
+</div>
+
+</body>
+</html>
